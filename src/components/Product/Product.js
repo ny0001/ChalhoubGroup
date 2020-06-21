@@ -6,23 +6,6 @@ import logo from '../../logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowsAlt } from '@fortawesome/free-solid-svg-icons';
 
-const styles = {
-  colors: {
-    black: {
-      backgroundColor: '#000'
-    },
-    lightcyan: {
-      backgroundColor: 'lightcyan'
-    },
-    white: {
-      backgroundColor: '#fff'
-    },
-    darkcyan: {
-      backgroundColor: 'darkcyan'
-    }
-  }
-}
-
 function LoadItems($this) {
     $this.GetProduct('./data/product-2.json');
 }
