@@ -8,11 +8,13 @@
     &__image-container {
         height: 400px;
         position: relative;
+        overflow: hidden;
     }
 
     &__image {
         height: 100%;
         margin: 0 auto;
+        cursor: pointer;
     }
 
     &__preview-btn {
@@ -48,10 +50,14 @@
         font-size: 20px;
     }
 
-    &__mark {
+    &__price-container {
         margin: 0;
         text-transform: uppercase;
         color: #6d6c6c;
+    }
+
+    &__price {
+        margin-left: 5px;
     }
 
     &__sizes {
