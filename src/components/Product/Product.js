@@ -49,80 +49,82 @@ class Product extends React.Component {
       return <img src={logo} className="App-logo" alt="logo" />;
     }
 
-    return (
-      <div className="m-product" data-testid="Product">
-        <div className="m-product__image-container">
-            <img
-                className="m-product__image"
-                src={ProductData.data.image}
-                alt={ProductData.data.alt} onClick={() => LoadItems(this)}/>
-            <button className="m-product__preview-btn">
-              <FontAwesomeIcon icon={faArrowsAlt} className="m-product__preview-btn-icon"/>
-            </button>
-        </div>
-        <div className="m-product__info">
-            <h3 className="m-product__title">
-              {ProductData.data.title}
-            </h3>
-            <p className="m-product__price-container">
-              <span className="m-product__currency">
-                {ProductData.data.currency}
-              </span>
-              <span className="m-product__price">
-                {ProductData.data.price}
-              </span>
-            </p>
-            <p className="m-product__sizes">
-              available sizes:
-              {ProductData.data.sizes.map((size, index) =>
-                <span key={index} className="m-product__size">
-                  {size}
+    if(ProductData && ProductData.data && ProductData.moreProducts) {
+      return (
+        <div className="m-product" data-testid="Product">
+          <div className="m-product__image-container">
+              <img
+                  className="m-product__image"
+                  src={ProductData.data.image}
+                  alt={ProductData.data.alt} onClick={() => LoadItems(this)}/>
+              <button className="m-product__preview-btn">
+                <FontAwesomeIcon icon={faArrowsAlt} className="m-product__preview-btn-icon"/>
+              </button>
+          </div>
+          <div className="m-product__info">
+              <h3 className="m-product__title">
+                {ProductData.data.title}
+              </h3>
+              <p className="m-product__price-container">
+                <span className="m-product__currency">
+                  {ProductData.data.currency}
                 </span>
-              )}
-            </p>
-            <div className="m-product__colors-container">
-                <p className="m-product__colors-label">Colors</p>
-                <div className="m-product__colors">
-                  {ProductData.data.colors.map((color, index) =>
-                    <button
-                      key={index}
-                      className="m-product__color"
-                      style={{backgroundColor: color}}>
-                    </button>
-                  )}
-                </div>
-                <div className="m-product__color-bg"></div>
-            </div>
-        </div>
-        <div className="m-product__description-container">
-          <p className="m-product__description-title">{ProductData.data.descriptionTitle}</p>
-          <p className="m-product__description">
-            {ProductData.data.description}
-          </p>
-          <ul className="m-product__description-list">
-            {ProductData.data.descriptionList.map((item, index) =>
-                <li key={index} className="m-product__description-list-item">
-                    {item}
-                </li>
-            )}
-          </ul>
-        </div>
-        <div className="m-product__more-products">
-            <p className="m-product__description-title">
-              {ProductData.moreProducts.title}
-            </p>
-            <div className="m-product__more-products-images">
-                {ProductData.moreProducts.images.map((product, index) =>
-                    <Link to={product.link} key={index} className="m-product__more-products-link">
-                        <img
-                            className="m-product__more-products-image"
-                            src={product.smallImage} alt={product.alt}/>
-                    </Link>
+                <span className="m-product__price">
+                  {ProductData.data.price}
+                </span>
+              </p>
+              <p className="m-product__sizes">
+                available sizes:
+                {ProductData.data.sizes.map((size, index) =>
+                  <span key={index} className="m-product__size">
+                    {size}
+                  </span>
                 )}
-            </div>
+              </p>
+              <div className="m-product__colors-container">
+                  <p className="m-product__colors-label">Colors</p>
+                  <div className="m-product__colors">
+                    {ProductData.data.colors.map((color, index) =>
+                      <button
+                        key={index}
+                        className="m-product__color"
+                        style={{backgroundColor: color}}>
+                      </button>
+                    )}
+                  </div>
+                  <div className="m-product__color-bg"></div>
+              </div>
+          </div>
+          <div className="m-product__description-container">
+            <p className="m-product__description-title">{ProductData.data.descriptionTitle}</p>
+            <p className="m-product__description">
+              {ProductData.data.description}
+            </p>
+            <ul className="m-product__description-list">
+              {ProductData.data.descriptionList.map((item, index) =>
+                  <li key={index} className="m-product__description-list-item">
+                      {item}
+                  </li>
+              )}
+            </ul>
+          </div>
+          <div className="m-product__more-products">
+              <p className="m-product__description-title">
+                {ProductData.moreProducts.title}
+              </p>
+              <div className="m-product__more-products-images">
+                  {ProductData.moreProducts.images.map((product, index) =>
+                      <Link to={product.link} key={index} className="m-product__more-products-link">
+                          <img
+                              className="m-product__more-products-image"
+                              src={product.smallImage} alt={product.alt}/>
+                      </Link>
+                  )}
+              </div>
+          </div>
         </div>
-      </div>
-    )
+      )
+    }
   }
 }
 
