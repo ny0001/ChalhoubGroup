@@ -19,8 +19,8 @@ class Product extends React.Component {
     };
   }
 
-  GetProduct(URL) {
-    fetch(URL)
+  async GetProduct(URL) {
+    await fetch(URL)
       .then(response => {
         if (response.ok) {
           return response.json();
@@ -125,6 +125,10 @@ class Product extends React.Component {
         </div>
       )
     }
+
+    return (
+      <h1>There is no products yet</h1>
+    );
   }
 }
 
