@@ -1,17 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Home.scss';
+import Product from '../../components/Product/Product';
 
 const Home = () => (
   <div className="Home" data-testid="Home">
     <div className="layout">
-      Home Component
+        <Product />
     </div>
   </div>
 );
-
-Home.propTypes = {};
-
-Home.defaultProps = {};
 
 export default Home;

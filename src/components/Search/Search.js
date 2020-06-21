@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Search.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
@@ -16,9 +15,5 @@ const Search = () => (
       </form>
   </div>
 );
-
-Search.propTypes = {};
-
-Search.defaultProps = {};
 
 export default Search;
