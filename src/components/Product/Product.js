@@ -1,6 +1,7 @@
 import React from 'react';
 import './Product.scss';
 import { Link } from 'react-router-dom';
+import logo from '../../logo.svg';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowsAlt } from '@fortawesome/free-solid-svg-icons';
@@ -31,7 +32,7 @@ class Product extends React.Component {
 
     this.state = {
       ProductData: [],
-      isLoading: true,
+      isLoading: false,
     };
   }
 
@@ -62,7 +63,7 @@ class Product extends React.Component {
     }
 
     if (isLoading) {
-      return <p>Loading ...</p>;
+      return <img src={logo} className="App-logo" alt="logo" />;
     }
 
     return (
