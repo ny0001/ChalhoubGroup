@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Product.scss';
 import { Link } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowsAlt } from '@fortawesome/free-solid-svg-icons';
@@ -77,33 +77,31 @@ const Product = () => (
             See more products
           </p>
           <div className="m-product__more-products-images">
-              <Link to='/' className="m-product__more-products-link">
-                  <img
-                    className="m-product__more-products-image"
-                    src="./images/product-small-1.png" alt=""/>
-              </Link>
-              <Link to='/' className="m-product__more-products-link">
-                  <img
-                    className="m-product__more-products-image"
-                    src="./images/product-small-2.png" alt=""/>
-              </Link>
-              <Link to='/' className="m-product__more-products-link">
-                  <img
-                    className="m-product__more-products-image"
-                    src="./images/product-small-3.png" alt=""/>
-              </Link>
-              <Link to='/' className="m-product__more-products-link">
-                  <img
-                    className="m-product__more-products-image"
-                    src="./images/product-small-4.png" alt=""/>
-              </Link>
+              <Router>
+                <Link to='/' className="m-product__more-products-link">
+                    <img
+                      className="m-product__more-products-image"
+                      src="./images/product-small-1.png" alt=""/>
+                </Link>
+                <Link to='/' className="m-product__more-products-link">
+                    <img
+                      className="m-product__more-products-image"
+                      src="./images/product-small-2.png" alt=""/>
+                </Link>
+                <Link to='/' className="m-product__more-products-link">
+                    <img
+                      className="m-product__more-products-image"
+                      src="./images/product-small-3.png" alt=""/>
+                </Link>
+                <Link to='/' className="m-product__more-products-link">
+                    <img
+                      className="m-product__more-products-image"
+                      src="./images/product-small-4.png" alt=""/>
+                </Link>
+              </Router>
           </div>
       </div>
   </div>
 );
-
-Product.propTypes = {};
-
-Product.defaultProps = {};
 
 export default Product;
